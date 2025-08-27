@@ -1,0 +1,86 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: FastAPI",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "main:app", // Replace 'main' with your file name and 'app' with your FastAPI instance name
+                "--host",
+                "127.0.0.1",
+                "--port",
+                "8000",
+                "--reload" // Optional: enables auto-reloading on code changes
+            ],
+            "cwd": "${workspaceFolder}/api",
+            "justMyCode": true,
+            "env": {
+                "PYTHONUNBUFFERED": "1"
+            }
+        },
+        {
+            "name": "Launch Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:8000",
+            "webRoot": "${workspaceFolder}/api",
+            "port": 9222,
+            "trace": true
+        },
+        {
+            "name": "Launch Firefox",
+            "type": "firefox",
+            "request": "launch",
+            "url": "http://localhost:8000",
+            "webRoot": "${workspaceFolder}/api",
+            "port": 9222,
+        },
+        {
+            "name": "Next.js: debug server-side",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "npm run dev -- --host=0.0.0.0",
+            "cwd": "${workspaceFolder}/ui",
+        },
+        {
+            "name": "Next.js: debug client-side",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}/ui",
+        },
+        {
+            "name": "Next.js: debug client-side (Firefox)",
+            "type": "firefox",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "reAttach": true,
+            "pathMappings": [
+            {
+                "url": "webpack://_N_E",
+                "path": "${workspaceFolder}/ui"
+            }
+            ]
+        },
+        {
+            "name": "Next.js: debug full stack",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/ui/node_modules/next/dist/bin/next",
+            "runtimeArgs": ["--inspect"],
+            "skipFiles": ["<node_internals>/**"],
+            "serverReadyAction": {
+            "action": "debugWithEdge",
+            "killOnServerStop": true,
+            "pattern": "- Local:.+(https?://.+)",
+            "uriFormat": "%s",
+            "webRoot": "${workspaceFolder}/ui"
+            }
+        }
+    ]
+}
