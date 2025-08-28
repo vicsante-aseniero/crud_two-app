@@ -1,0 +1,109 @@
+# Created by https://www.toptal.com/developers/gitignore/api/python
+# Edit at https://www.toptal.com/developers/gitignore?templates=python
+
+### Python ###
+# Byte-compiled / optimized / compiled files
+api/__pycache__/
+api/*.pyc
+api/*.pyd
+api/*.pyo
+api/*.egg-info/
+
+# Virtual environment
+api/.venv/
+api/venv/
+api/env/
+# For poetry
+api/.direnv/
+
+# Editor-specific files
+api/.vscode/ # VS Code settings, if not shared
+api/.idea/ # PyCharm/IntelliJ IDEA settings
+api/*.sublime-project
+api/*.sublime-workspace
+
+# OS generated files
+api/.DS_Store
+api/Thumbs.db
+
+# Logs and temporary files
+api/*.log
+api/*.tmp
+api/*.bak
+api/*.swp
+
+# Database files
+api/*.sqlite3
+api/*.db
+
+# Environment variables
+api/.env
+api/.flaskenv
+
+# Test results
+api/.pytest_cache/
+api/.coverage
+
+# Build artifacts
+api/dist/
+api/build/
+
+# Other common exclusions
+api/celerybeat-schedule/
+
+### NextJS ###
+# dependencies
+ui/node_modules
+ui/.pnp
+ui/.pnp.js
+
+# testing
+ui/coverage
+
+# next.js
+ui/.next/
+ui/out/
+
+# production
+ui/build
+
+# misc
+ui/.DS_Store
+ui/*.pem
+
+# debug
+ui/npm-debug.log*
+ui/yarn-debug.log*
+ui/yarn-error.log*
+ui/.pnpm-debug.log*
+
+# local env files
+ui/.env*.local
+
+# vercel
+ui/.vercel
+
+# typescript
+ui/*.tsbuildinfo
+ui/next-env.d.ts
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/go,nextjs,visualstudiocode
