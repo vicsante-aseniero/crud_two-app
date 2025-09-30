@@ -5,7 +5,7 @@ sudo apt-get update && sudo apt-get install -y net-tools
 sudo apt install python3-pip -y
 
 echo "Installing needed package(s)....."
-pip3 install -r ./requirements.txt
+pip3 install --user -r ./requirements.txt
 
 python3 --version
 pip3 --version
