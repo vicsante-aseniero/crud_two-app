@@ -3,7 +3,7 @@
 {
 	"name": "Python 3 & PostgreSQL",
 	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
+	"service": "python-app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -32,6 +32,10 @@
 			"awslocal": true,
 			"samlocal": true,
 			"installUsingPython": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"installDirectlyFromGitHubRelease": true,
 			"version": "latest"
 		},
 		"ghcr.io/devcontainers-extra/features/node-asdf:0": {
@@ -73,46 +77,47 @@
 	"forwardPorts": [5432, 5672, 6379, 8000, 9000, 15672],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "pip install --user -r requirements.txt",
+	"postCreateCommand": "bash ./postCreateCommand.sh", // "pip install --user -r requirements.txt",
 
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
 			"extensions": [
-                "amazonwebservices.amazon-q-vscode",
-                "amazonwebservices.aws-toolkit-vscode",
-                "christian-kohler.npm-intellisense",
-                "Codeium.codeium",
-                "Compulim.vscode-mocha",
-                "cweijan.vscode-redis-client",
-                "dbaeumer.vscode-eslint",
-                "docsmsft.docs-yaml",
-                "EditorConfig.EditorConfig",
-                "esbenp.prettier-vscode",
-                "firefox-devtools.vscode-firefox-debug",
-                "GitHub.copilot",
-                "GitHub.copilot-chat",
-                "google.geminicodeassist",
-                "humao.rest-client",
-                "kilocode.kilo-code",
-                "localstack.localstack",
-                "ms-playwright.playwright",
-                "ms-python.autopep8",
-                "ms-python.black-formatter",
-                "ms-python.debugpy",
-                "ms-python.isort",
-                "ms-python.pylint",
-                "ms-python.python",
-                "ms-python.vscode-pylance",
-                "ms-vscode-remote.remote-containers",
-                "ms-vscode-remote.remote-wsl",
-                "ms-vscode-remote.vscode-remote-extensionpack",
-                "ms-vscode.vscode-typescript-next",
-                "Orta.vscode-jest",
-                "PKief.material-icon-theme",
-                "Postman.postman-for-vscode",
-                "redhat.vscode-yaml",
-                "xabikos.JavaScriptSnippets"
+				"amazonwebservices.amazon-q-vscode",
+				"amazonwebservices.aws-toolkit-vscode",
+				"christian-kohler.npm-intellisense",
+				"Codeium.codeium",
+				"Commandeer.commandeer",
+				"Compulim.vscode-mocha",
+				"cweijan.vscode-redis-client",
+				"dbaeumer.vscode-eslint",
+				"docsmsft.docs-yaml",
+				"EditorConfig.EditorConfig",
+				"esbenp.prettier-vscode",
+				"firefox-devtools.vscode-firefox-debug",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"google.geminicodeassist",
+				"humao.rest-client",
+				"kilocode.kilo-code",
+				"localstack.localstack",
+				"ms-playwright.playwright",
+				"ms-python.autopep8",
+				"ms-python.black-formatter",
+				"ms-python.debugpy",
+				"ms-python.isort",
+				"ms-python.pylint",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-vscode-remote.remote-containers",
+				"ms-vscode-remote.remote-wsl",
+				"ms-vscode-remote.vscode-remote-extensionpack",
+				"ms-vscode.vscode-typescript-next",
+				"Orta.vscode-jest",
+				"PKief.material-icon-theme",
+				"Postman.postman-for-vscode",
+				"redhat.vscode-yaml",
+				"xabikos.JavaScriptSnippets"
 			]
 		}
 	}
