@@ -121,8 +121,11 @@
 				"xabikos.JavaScriptSnippets"
 			]
 		}
-	}
+	},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+	// "remoteUser": "root",
+
+	// Run as non-root user for better security
+	"remoteUser": "vscode"
 }
