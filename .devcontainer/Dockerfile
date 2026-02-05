@@ -1,5 +1,10 @@
 FROM mcr.microsoft.com/devcontainers/python:1-3.12-bookworm
 
+# Use non-root user for better security (vscode user is pre-created in the base image)
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
 ENV PYTHONUNBUFFERED 1
 
 # [Optional] If your requirements rarely change, uncomment this section to add them to the image.
